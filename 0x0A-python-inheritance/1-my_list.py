@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-
-
 """ MyList that inherit from list
 """
+
+
+
 
 
 class MyList(list):
