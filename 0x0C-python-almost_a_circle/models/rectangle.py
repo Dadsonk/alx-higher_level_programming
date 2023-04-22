@@ -13,8 +13,6 @@ class Rectangle(Base):
             Base
     '''
 
-
-
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
@@ -22,16 +20,12 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-
-
     @property
     def width(self):
         '''
             Returning private attribute
         '''
         return self.__width
-
-
 
     @width.setter
     def width(self, value):
@@ -41,16 +35,12 @@ class Rectangle(Base):
         self.setter_validation("width", value)
         self.__width = value
 
-
-
     @property
     def height(self):
         '''
             Returning private attribute
         '''
         return self.__height
-
-
 
     @height.setter
     def height(self, value):
@@ -60,16 +50,12 @@ class Rectangle(Base):
         self.setter_validation("height", value)
         self.__height = value
 
-
-
     @property
     def x(self):
         '''
             Returning private attribute
         '''
         return self.__x
-
-
 
     @x.setter
     def x(self, value):
@@ -79,16 +65,12 @@ class Rectangle(Base):
         self.setter_validation("x", value)
         self.__x = value
 
-
-
     @property
     def y(self):
         '''
             Returning private attribute
         '''
         return self.__y
-
-
 
     @y.setter
     def y(self, value):
@@ -98,15 +80,11 @@ class Rectangle(Base):
         self.setter_validation("y", value)
         self.__y = value
 
-
-
     def area(self):
         '''
             Returns the area of the rectangle
         '''
         return (self.height * self.width)
-
-
 
     def display(self):
         '''
@@ -117,8 +95,6 @@ class Rectangle(Base):
         for i in range(self.height):
             rectangle += (" " * self.x) + ("#" * self.width) + "\n"
         print(rectangle, end="")
-
-
 
     def update(self, *args, **kwargs):
         '''
@@ -137,8 +113,6 @@ class Rectangle(Base):
         except IndexError:
             pass
 
-
-
     def to_dictionary(self):
         '''
             Returns a dictionary representation of this class
@@ -149,8 +123,6 @@ class Rectangle(Base):
                 'height': getattr(self, "height"),
                 'width': getattr(self, "width")}
 
-
-
     @staticmethod
     def setter_validation(attribute, value):
         if type(value) != int:
@@ -160,8 +132,6 @@ class Rectangle(Base):
                 raise ValueError("{} must be >= 0".format(attribute))
         elif value <= 0:
             raise ValueError("{} must be > 0".format(attribute))
-
-
 
     def __str__(self):
         '''
