@@ -4,9 +4,6 @@ an instance of the specified class ; otherwise False
 """
 
 
-
-
 def is_same_class(obj, a_class):
     """Returns True or False if case i true of not"""
-    return type(obj) == a_class
-
+    return isinstance(obj, a_class)
