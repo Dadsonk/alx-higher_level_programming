@@ -1,18 +1,24 @@
 #!/usr/bin/python3
 
 
-"""Defines a class MyInt that inherits from int."""
+"""
+Module 101-add_attribute.py with method add_attribute.
+"""
 
 
-class MyInt(int):
-    """Invert int operators == and !=."""
+def add_attribute(obj, attribute, value):
 
-    def __eq__(self, value):
-        """Override == opeartor with != behavior."""
+    """
+    Accepts three parameters (obj, attribute, value).
+    Adds a new attribute to an object if it’s possible.
+    Arguments:
+        obj (any): object whose attribute has to be added
+        attribute (str): name of attribute
+        value (any): value of the attribute
+    Exceptions:
+        TypeError: if the object can’t have new attribute
+    """
 
-        return self.real != value
-
-    def __ne__(self, value):
-        """Override != operator with == behavior."""
-
-        return self.real == value
+    if not hasattr(obj, "__dict__"):
+        raise TypeError("can't add new attribute")
+    setattr(obj, attribute, value)
